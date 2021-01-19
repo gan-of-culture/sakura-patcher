@@ -9,52 +9,20 @@ from os.path import join
 
 ALL_PATCH_URLS = [
             {
-                "game": "Sakura Dungeon",
-                "URL": "https://we.tl/EGJuqaTyOd"
-            },
-            {
-                "game": "Sakura Fantasy",
-                "URL": "https://we.tl/GXMoHoWKRT"
-            },
-            {
-                "game": "Sakura Space",
-                "URL": "https://we.tl/rzw8uYu0rS"
-            },
-            {
-                "game": "Sakura Swim Club", 
-                "URL": "" # https://we.tl/zWlFopavSh
-            },
-            {
-                "game": "Sakura Nova",
-                "URL": "https://we.tl/T5zouesQBi"
-            },
-            {
                 "game": "Sakura Agent",
                 "URL": "https://wingedcloud.wetransfer.com/downloads/502682c02648ba2bcee9306b45ba237c20170127114431/89dc8a"
-            },
-            {
-                "game": "Sakura Magical Girls",
-                "URL": "https://we.tl/2mzl9lMihN"
             },
             {
                 "game": "Sakura Cupid",
                 "URL": "https://wingedcloud.wetransfer.com/downloads/f623887cf50ff53460826f30bae7991920180212164017/d21d1e"
             },
             {
-                "game": "Sakura Sadist",
-                "URL": "https://we.tl/S31ZAAwfuO"
+                "game": "Sakura Dungeon",
+                "URL": "https://we.tl/EGJuqaTyOd"
             },
             {
-                "game": "Sakura MMO",
-                "URL": "https://wingedcloud.wetransfer.com/downloads/bf8463cc8dab12b3a8fc2083a21d761a20181015181223/7c26ed"
-            },
-            {
-                "game": "Sakura MMO 2",
-                "URL": "https://we.tl/t-VxxEtpMQPK"
-            },
-            {
-                "game": "Sakura MMO 3",
-                "URL": "https://wingedcloud.wetransfer.com/downloads/a3cffdd814a43e59c6d87b970fa1a0af20190605180849/6103c4"
+                "game": "Sakura Fantasy",
+                "URL": "https://we.tl/GXMoHoWKRT"
             },
             {
                 "game": "Sakura Fox Adventure",
@@ -71,6 +39,62 @@ ALL_PATCH_URLS = [
             {
                 "game": "Sakura Knight",
                 "URL": "https://we.tl/t-RJhUv8UVnr"
+            },
+            {
+                "game": "Sakura Knight 2",
+                "URL": "https://we.tl/t-0CVFnxH11k"
+            },
+            {
+                "game": "Sakura Knight 3",
+                "URL": "https://we.tl/t-lBzY2OU47A"
+            },
+            {
+                "game": "Sakura Magical Girls",
+                "URL": "https://we.tl/2mzl9lMihN"
+            },
+            {
+                "game": "Sakura MMO",
+                "URL": "https://wingedcloud.wetransfer.com/downloads/bf8463cc8dab12b3a8fc2083a21d761a20181015181223/7c26ed"
+            },
+            {
+                "game": "Sakura MMO 2",
+                "URL": "https://we.tl/t-VxxEtpMQPK"
+            },
+            {
+                "game": "Sakura MMO 3",
+                "URL": "https://wingedcloud.wetransfer.com/downloads/a3cffdd814a43e59c6d87b970fa1a0af20190605180849/6103c4"
+            },
+            {
+                "game": "Sakura MMO Extra",
+                "URL": "https://we.tl/t-LkqNrUSkBX"
+            },
+            {
+                "game": "Sakura Nova",
+                "URL": "https://we.tl/T5zouesQBi"
+            },
+            {
+                "game": "Sakura Sadist",
+                "URL": "https://we.tl/S31ZAAwfuO"
+            },
+            {
+                "game": "Sakura Space",
+                "URL": "https://we.tl/rzw8uYu0rS"
+            },
+            {
+                "game": "Sakura Succubus",
+                "URL": "https://wingedcloud.wetransfer.com/downloads/717fedf8dcc50d0e1611a170a2971ce120200310192553/c249a2"
+            },
+            {
+                "game": "Sakura Succubus 2",
+                "URL": "https://we.tl/t-jhWiowJzNN"
+            },
+            {
+                "game": "Sakura Succubus 3",
+                "URL": "https://we.tl/t-EsZuGK9yd9"
+            },
+            {
+                "game": "Sakura Swim Club", 
+                "URL": "" # https://we.tl/zWlFopavSh
             },
 ]
 

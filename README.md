@@ -1,3 +1,5 @@
+![FoxGirl](https://static.wikia.nocookie.net/winged-cloud/images/8/86/Images_%284%29.jpeg/revision/latest/scale-to-width-down/906?cb=20200505034653)
+
 # sakura-patcher
 Unoffical Application to patch your sakura games
 
@@ -28,3 +30,28 @@ Now just run the command above and wait until it's finished. The process might t
 Please check out [https://github.com/GaryWatsonUK/py-wetransfer](https://github.com/GaryWatsonUK/py-wetransfer) for supplying me with a wetransfer download(er)
 
 ## Existing Files will be renamed to [filename].rpa-copy
+
+## Supported Games (currently)
+
+1. Sakura Agent
+2. Sakura Cupid
+3. Sakura Dungeon
+4. Sakura Fantasy
+5. Sakura Fox Adventure
+6. Sakura Gamer
+7. Sakura Gamer 2
+8. Sakura Knight
+9. Sakura Knight 2
+10. Sakura Knight 3
+11. Sakura Magical Girls
+12. Sakura MMO
+13. Sakura MMO 2
+14. Sakura MMO 3
+15. Sakura MMO Extra
+16. Sakura Nova
+17. Sakura Sadist
+18. Sakura Space
+19. Sakura Succubus
+20. Sakura Succubus 2
+21. Sakura Succubus 3
+22. Sakura Swim Club
