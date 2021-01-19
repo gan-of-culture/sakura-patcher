@@ -6,6 +6,7 @@ import os
 import time
 from pyunpack import Archive 
 from os.path import join
+from zipfile import ZipFile
 
 ALL_PATCH_URLS = [
             {
@@ -125,6 +126,13 @@ def main(argv):
         cwd = os.getcwd()
         if patch["URL"] != "":
             wtget(patch["URL"])
+            for file in os.listdir(cwd):
+                if file.endswith(".zip"):
+                    with ZipFile(file, 'r') as zipObj:
+                        zipObj.extractall()
+                    os.remove(file)
+
+
             for file in os.listdir(cwd):
                 if file.endswith(".rpa"):
                     os.rename(file, join(cwd, patch["game"], file))
