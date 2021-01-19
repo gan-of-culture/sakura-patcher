@@ -21,8 +21,8 @@ ALL_PATCH_URLS = [
                 "URL": "https://we.tl/rzw8uYu0rS"
             },
             {
-                "game": "Sakura Swim Club",
-                "URL": "https://we.tl/zWlFopavSh"
+                "game": "Sakura Swim Club", 
+                "URL": "" # https://we.tl/zWlFopavSh
             },
             {
                 "game": "Sakura Nova",
@@ -78,7 +78,7 @@ def main(argv):
     if len(argv) == 0:
         print("Use the sakura-patcher like this: python sakura_patcher.py [Steam Libary Path here]\n For me it's K://")
     
-    gameCollectionDir = join(argv[0], "Steam/steamapps/common/")
+    gameCollectionDir = join(argv[0], "Steam//steamapps//common//")
     allGames = os.listdir(gameCollectionDir)
     sakuraGames = []
     for game in allGames:
@@ -90,37 +90,69 @@ def main(argv):
         for game in sakuraGames:
             if patch["game"] == game:
                 neededPatchFiles.append(patch)
+                if not os.path.isdir(join(os.getcwd(), patch["game"])):
+                    os.mkdir(join(os.getcwd(), patch["game"]))
                 print("Patch availabel for {0}".format(game))
 
-    for patch in neededPatchFiles:
+    for idx, patch in enumerate(neededPatchFiles):
+        print("---------{0}.{1}---------".format(idx + 1, patch["game"]))
         print("Downloading patch for {0}".format(patch["game"]))
-        wtget(patch["URL"])
+        
+        cwd = os.getcwd()
+        if patch["URL"] != "":
+            wtget(patch["URL"])
+            for file in os.listdir(cwd):
+                if file.endswith(".rpa"):
+                    os.rename(file, join(cwd, patch["game"], file))
+
+
         print("Download finished for {0}".format(patch["game"]))
         fileDest = join(gameCollectionDir, patch["game"],"game/")
-        cwdContent = os.listdir(os.getcwd())
-        cwd = os.getcwd()
-        for file in cwdContent:
+        
+        for file in os.listdir(join(cwd, patch["game"])):
+            print("Moving file to dir: {0}".format(fileDest))
+
+            destFile = join(fileDest, file)
+
+            if os.path.isfile(destFile) and not os.path.isfile(destFile + "-copy"):
+                os.rename(destFile, destFile + "-copy") 
+
+            f_cont = []
+            with open(join(cwd, patch["game"], file), "rb") as f:
+                f_cont = f.readlines()
+            with open(join(fileDest, file), "wb+") as f:
+                f.writelines(f_cont)
             
-            if patch["game"] == "Sakura Swim Club":
-                print("Moving file to dir: {0}".format(fileDest))
-                f_cont = []
-                with open(join(fileDest, "archive.rpa"), "rb") as f:
-                    f_cont = f.readlines()
-                with open(join(fileDest, "archive.rpa"), "wb") as f:
-                    f.writelines(f_cont)
 
+            if os.path.isfile(destFile):
+                print("Moving file to dir done!")
+            else:
+                print("Moving file to dir ERROR!")
 
-            if file.endswith(".rpa"):
-                print("Moving file to dir: {0}".format(fileDest))
-                try:
-                    os.remove(join(fileDest, file))
-                except:
-                    pass
-                try:
-                    os.rename(file, join(fileDest, file)) 
-                except:
-                    print("File can't be installed")
-                    os.remove(file)              
+        # The download link for SSC is a .rar file and requiers additional software to unpack
+        # thats why this is the only static binary in this repository
+        cleanUp = True
+        if cleanUp and patch["game"] != "Sakura Swim Club":
+            print("Removing temp .rpa file(s) for game {0}".format(patch["game"]))
+            tempGameDir = join(cwd, patch["game"])
+            try:
+                for file in os.listdir(tempGameDir):
+                    os.remove(join(tempGameDir,file))
+
+                print("File(s) removed successfully")
+            except:
+                print("File(s) could not be removed automatically")
+
+            print("Removing temp dir for game {0}".format(patch["game"]))
+            try:
+                os.rmdir(tempGameDir)
+                print("Directory removed successfully")
+            except:
+                print("Directory could not be removed automatically")
+
+        
+            
+             
 
 if __name__ == "__main__":
     main(sys.argv[1:])    

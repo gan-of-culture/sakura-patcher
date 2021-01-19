@@ -25,7 +25,6 @@ In my case I have to do it like this:
 The program will understand that your games are in the Steam folder at the following path: .../Steam/steamapps/common/  
 Now just run the command above and wait until it's finished. The process might take a while because some of the files are quite large (~150MB). If you wanna stop the programm at any time press ctrl + C.
 
-## !!Also all your old files will get overwritten!!
+Please check out [https://github.com/GaryWatsonUK/py-wetransfer](https://github.com/GaryWatsonUK/py-wetransfer) for supplying me with a wetransfer download(er)
 
-So if you wanna just try it out then manually backup your old .rpa files.  
-.../Steam/steamapps/common/Sakura .../game/*.rpa
+## Existing Files will be renamed to [filename].rpa-copy
