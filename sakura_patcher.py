@@ -94,16 +94,22 @@ ALL_PATCH_URLS = [
                 "URL": "https://we.tl/t-EsZuGK9yd9"
             },
             {
+                "game": "Sakura Succubus 4",
+                "URL": "https://wingedcloud.wetransfer.com/downloads/6e573c87617607b16d9c3dafb5ce75dc20210301161546/8c6ad5"
+            },
+            {
                 "game": "Sakura Swim Club", 
                 "URL": "" # https://we.tl/zWlFopavSh
             },
 ]
 
+STEAM_LIB_PATH_EXT = "Steam//steamapps//common//"
+
 def main(argv):
     if len(argv) == 0:
         print("Use the sakura-patcher like this: python sakura_patcher.py [Steam Libary Path here]\n For me it's K://")
     
-    gameCollectionDir = join(argv[0], "Steam//steamapps//common//")
+    gameCollectionDir = join(argv[0], STEAM_LIB_PATH_EXT)
     allGames = os.listdir(gameCollectionDir)
     sakuraGames = []
     for game in allGames:
@@ -117,7 +123,7 @@ def main(argv):
                 neededPatchFiles.append(patch)
                 if not os.path.isdir(join(os.getcwd(), patch["game"])):
                     os.mkdir(join(os.getcwd(), patch["game"]))
-                print("Patch availabel for {0}".format(game))
+                print("Patch available for {0}".format(game))
 
     for idx, patch in enumerate(neededPatchFiles):
         print("---------{0}.{1}---------".format(idx + 1, patch["game"]))
