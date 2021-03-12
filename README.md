@@ -56,4 +56,5 @@ Although content you already unlocked will not be deleted, I wanted to make sure
 19. Sakura Succubus
 20. Sakura Succubus 2
 21. Sakura Succubus 3
-22. Sakura Swim Club
+22. Sakura Succubus 4
+23. Sakura Swim Club
