@@ -1,2 +1,3 @@
 requests
 HTMLParser
+PySide6

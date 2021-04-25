@@ -18,14 +18,16 @@ Install the dependencies:
 
 Now you can run the program like this:
 
-    python sakura-patcher.py [Your Path to your Steam Libary here]
+    python sakura-patcher.py 
 
-In my case I have to do it like this:
+Choose your file path. For me the games are in this directory:
+    
+    K:\Steam\steamapps\common
 
-    python sakura-patcher.py K://
+After selecting the games you want to have patched, click "Patch selected" and wait :)
 
-The program will understand that your games are in the Steam folder at the following path: .../Steam/steamapps/common/  
-Now just run the command above and wait until it's finished. The process might take a while because some of the files are quite large (~150MB) and varying download speeds.
+This is the first version that has a GUI so there will be bugs.
+Downloading the patches might take a while because some of the files are quite large (~150MB) and varying download speeds.
 
 Please check out [https://github.com/GaryWatsonUK/py-wetransfer](https://github.com/GaryWatsonUK/py-wetransfer) for supplying me with a wetransfer download(er)
 
@@ -39,22 +41,23 @@ Although content you already unlocked will not be deleted, I wanted to make sure
 2. Sakura Cupid
 3. Sakura Dungeon
 4. Sakura Fantasy
-5. Sakura Fox Adventure
-6. Sakura Gamer
-7. Sakura Gamer 2
-8. Sakura Knight
-9. Sakura Knight 2
-10. Sakura Knight 3
-11. Sakura Magical Girls
-12. Sakura MMO
-13. Sakura MMO 2
-14. Sakura MMO 3
-15. Sakura MMO Extra
-16. Sakura Nova
-17. Sakura Sadist
-18. Sakura Space
-19. Sakura Succubus
-20. Sakura Succubus 2
-21. Sakura Succubus 3
-22. Sakura Succubus 4
-23. Sakura Swim Club
+5. Sakura Forest Girls
+6. Sakura Fox Adventure
+7. Sakura Gamer
+8. Sakura Gamer 2
+9. Sakura Knight
+10. Sakura Knight 2
+11. Sakura Knight 3
+12. Sakura Magical Girls
+13. Sakura MMO
+14. Sakura MMO 2
+15. Sakura MMO 3
+16. Sakura MMO Extra
+17. Sakura Nova
+18. Sakura Sadist
+19. Sakura Space
+20. Sakura Succubus
+21. Sakura Succubus 2
+22. Sakura Succubus 3
+23. Sakura Succubus 4
+24. Sakura Swim Club
