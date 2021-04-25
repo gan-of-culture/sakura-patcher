@@ -20,7 +20,7 @@ Now you can run the program like this:
 
     python sakura-patcher.py 
 
-Choose your file path for me the games are under:
+Choose your file path. For me the games are in this directory:
     
     K:\Steam\steamapps\common
 
