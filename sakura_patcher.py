@@ -32,10 +32,15 @@ ALL_PATCH_URLS = [
                 "URL": "https://we.tl/GXMoHoWKRT",
                 "hashes": {"archive.rpa": "CC3CE2B581103DF81C2F29504AE0DC13"}
             },
-                        {
+            {
                 "game": "Sakura Forest Girls",
                 "URL": "https://wingedcloud.wetransfer.com/downloads/5179f6ba1e1c910fe0efb80403b1b5e320210419152946/d5ba4b",
                 "hashes": {"archive.rpa": "2E838AD5BAB2A8C6F481F5D0D218C129"}
+            },
+            {
+                "game": "Sakura Forest Girls 2",
+                "URL": "https://we.tl/t-rxVpHynlrU",
+                "hashes": {"assets.rpa": "A1DC9AFD2D830621026F2C673ACB30D6"}
             },
             {
                 "game": "Sakura Fox Adventure",
