@@ -3,7 +3,7 @@
 # sakura-patcher
 Unoffical Application to patch your sakura games
 
-I created this for myself after buying the budle on steam I noticed that there are adult content patches availabel for some games.
+I created this for myself after buying the budle on steam I noticed that there are adult content patches available for some games.
 Because it's a pain in the ass to patch all games manually I wanted to make a application to do it for me and possibly for you.
 
 All content is provided by the official Winged Cloud Patreon [https://www.patreon.com/wingedcloud](https://www.patreon.com/wingedcloud)  
