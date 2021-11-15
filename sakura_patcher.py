@@ -43,6 +43,11 @@ ALL_PATCH_URLS = [
                 "hashes": {"assets.rpa": "A1DC9AFD2D830621026F2C673ACB30D6"}
             },
             {
+                "game": "Sakura Forest Girls 3",
+                "URL": "https://we.tl/t-IkVpJyBnkn",
+                "hashes": {"assets.rpa": "536747A55ABA1B3256780DFCA1F6C4AC"}
+            },
+            {
                 "game": "Sakura Fox Adventure",
                 "URL": "https://wingedcloud.wetransfer.com/downloads/f1c49f046bd16d7d70a8374f50155a5020191008143738/01b9cf",
                 "hashes": {"assets.rpa": "C0ED849280955609FB3905AC9A28DC55"}
