@@ -144,6 +144,14 @@ ALL_PATCH_URLS = [
                 "game": "Sakura Swim Club", 
                 "URL": "", # https://we.tl/zWlFopavSh
                 "hashes": {"archive.rpa": "56266B40134B76D60876C5AA9419AF0F"}
+            },{
+                "game": "Would you like to run an idol café?", 
+                "URL": "https://we.tl/t-JkNwJ0Bj0M",
+                "hashes": {"assets.rpa": "8234BCD2BB49989F14D1CE35E9CB1583"}
+            },{
+                "game": "Would you like to run an idol café? 2", 
+                "URL": "https://we.tl/t-Prc7eoSi4S",
+                "hashes": {"assets.rpa": "35347CD8CEC81E2A424242CAAC00B0DB"}
             },
 ]
 
