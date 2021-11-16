@@ -42,22 +42,24 @@ Although content you already unlocked will not be deleted, I wanted to make sure
 3. Sakura Dungeon
 4. Sakura Fantasy
 5. Sakura Forest Girls
-6. Sakura Fox Adventure
-7. Sakura Gamer
-8. Sakura Gamer 2
-9. Sakura Knight
-10. Sakura Knight 2
-11. Sakura Knight 3
-12. Sakura Magical Girls
-13. Sakura MMO
-14. Sakura MMO 2
-15. Sakura MMO 3
-16. Sakura MMO Extra
-17. Sakura Nova
-18. Sakura Sadist
-19. Sakura Space
-20. Sakura Succubus
-21. Sakura Succubus 2
-22. Sakura Succubus 3
-23. Sakura Succubus 4
-24. Sakura Swim Club
+6. Sakura Forest Girls 2
+7. Sakura Forest Girls 3
+8. Sakura Fox Adventure
+9. Sakura Gamer
+10. Sakura Gamer 2
+11. Sakura Knight
+12. Sakura Knight 2
+13. Sakura Knight 3
+14. Sakura Magical Girls
+15. Sakura MMO
+16. Sakura MMO 2
+17. Sakura MMO 3
+18. Sakura MMO Extra
+19. Sakura Nova
+20. Sakura Sadist
+21. Sakura Space
+22. Sakura Succubus
+23. Sakura Succubus 2
+24. Sakura Succubus 3
+25. Sakura Succubus 4
+26. Sakura Swim Club
