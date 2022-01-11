@@ -38,30 +38,31 @@ Although content you already unlocked will not be deleted, I wanted to make sure
 ## Supported Games (currently)
 
 1. Sakura Agent
-2. Sakura Cupid
-3. Sakura Dungeon
-4. Sakura Fantasy
-5. Sakura Forest Girls
-6. Sakura Forest Girls 2
-7. Sakura Forest Girls 3
-8. Sakura Fox Adventure
-9. Sakura Gamer
-10. Sakura Gamer 2
-11. Sakura Knight
-12. Sakura Knight 2
-13. Sakura Knight 3
-14. Sakura Magical Girls
-15. Sakura MMO
-16. Sakura MMO 2
-17. Sakura MMO 3
-18. Sakura MMO Extra
-19. Sakura Nova
-20. Sakura Sadist
-21. Sakura Space
-22. Sakura Succubus
-23. Sakura Succubus 2
-24. Sakura Succubus 3
-25. Sakura Succubus 4
-26. Sakura Swim Club
-27. Would you like to run an idol café?
-28. Would you like to run an idol café? 2
+2. Sakura Alien
+3. Sakura Cupid
+4. Sakura Dungeon
+5. Sakura Fantasy
+6. Sakura Forest Girls
+7. Sakura Forest Girls 2
+8. Sakura Forest Girls 3
+9. Sakura Fox Adventure
+10. Sakura Gamer
+11. Sakura Gamer 2
+12. Sakura Knight
+13. Sakura Knight 2
+14. Sakura Knight 3
+15. Sakura Magical Girls
+16. Sakura MMO
+17. Sakura MMO 2
+18. Sakura MMO 3
+19. Sakura MMO Extra
+20. Sakura Nova
+21. Sakura Sadist
+22. Sakura Space
+23. Sakura Succubus
+24. Sakura Succubus 2
+25. Sakura Succubus 3
+26. Sakura Succubus 4
+27. Sakura Swim Club
+28. Would you like to run an idol café?
+29. Would you like to run an idol café? 2
