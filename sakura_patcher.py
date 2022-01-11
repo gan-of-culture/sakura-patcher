@@ -11,11 +11,17 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
+## md5sum assets.rpa | tr '[:lower:]' '[:upper:]'
 ALL_PATCH_URLS = [
             {
                 "game": "Sakura Agent",
                 "URL": "https://wingedcloud.wetransfer.com/downloads/502682c02648ba2bcee9306b45ba237c20170127114431/89dc8a",
                 "hashes": {"archive.rpa": "CEEF65D0B07C1306277663C0CC3FC127"}
+            },
+            {
+                "game": "Sakura Alien",
+                "URL": "https://we.tl/t-mGqvYtTTZE",
+                "hashes": {"assets.rpa": "94446DE3804E3421CB93E7B66A3B4BD0"}
             },
             {
                 "game": "Sakura Cupid",
