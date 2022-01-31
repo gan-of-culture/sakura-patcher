@@ -1,7 +1,7 @@
 ![FoxGirl](https://static.wikia.nocookie.net/winged-cloud/images/8/86/Images_%284%29.jpeg/revision/latest/scale-to-width-down/906?cb=20200505034653)
 
 # sakura-patcher
-Unoffical Application to patch your sakura games
+Unoffical application to patch your sakura games
 
 I created this for myself after buying the budle on steam I noticed that there are adult content patches available for some games.
 Because it's a pain in the ass to patch all games manually I wanted to make a application to do it for me and possibly for you.

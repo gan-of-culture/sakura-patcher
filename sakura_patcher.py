@@ -150,18 +150,18 @@ ALL_PATCH_URLS = [
                 "game": "Sakura Swim Club", 
                 "URL": "", # https://we.tl/zWlFopavSh
                 "hashes": {"archive.rpa": "56266B40134B76D60876C5AA9419AF0F"}
-            },{
-                "game": "Would you like to run an idol café?", 
+            },
+            {
+                "game": "Would you like to run an idol café", 
                 "URL": "https://we.tl/t-JkNwJ0Bj0M",
                 "hashes": {"assets.rpa": "8234BCD2BB49989F14D1CE35E9CB1583"}
-            },{
-                "game": "Would you like to run an idol café? 2", 
+            },
+            {
+                "game": "Would you like to run an idol café 2", 
                 "URL": "https://we.tl/t-Prc7eoSi4S",
                 "hashes": {"assets.rpa": "35347CD8CEC81E2A424242CAAC00B0DB"}
             },
 ]
-
-STEAM_LIB_PATH_EXT = "Steam//steamapps//common//"
 
 class Patcher(QMainWindow):
     def __init__(self):
@@ -239,7 +239,7 @@ class Patcher(QMainWindow):
         allGames = os.listdir(self.pathToGames.text())
         sakuraGames = []
         for game in allGames:
-            if game.startswith("Sakura"):
+            if game.startswith("Sakura") or game.startswith("Would you like to run an idol café"):
                 sakuraGames.append(game)
 
         self.neededPatchFiles = []
@@ -348,23 +348,24 @@ class Patcher(QMainWindow):
             # The download link for SSC is a .rar file and requiers additional software to unpack
             # thats why this is the only static binary in this repository
             cleanUp = True
-            if cleanUp and d != "Sakura Swim Club" and os.path.isdir(d) and d.startswith("Sakura"):
-                try:
-                    for file in os.listdir(d):
-                        os.remove(join(d,file))
+            if cleanUp and d != "Sakura Swim Club" and os.path.isdir(d):
+                if d.startswith("Sakura") or d.startswith("Would you like to run an idol café"):
+                    try:
+                        for file in os.listdir(d):
+                            os.remove(join(d,file))
 
-                    print("File(s) removed successfully")
-                except:
-                    pass
-                    #print("File(s) could not be removed automatically")
+                        print("File(s) removed successfully")
+                    except:
+                        pass
+                        #print("File(s) could not be removed automatically")
 
-                #print("Removing temp dir for game {0}".format(patch["game"]))
-                try:
-                    os.rmdir(d)
-                    print("Directory removed successfully")
-                except:
-                    pass
-                    #print("Directory could not be removed automatically")
+                    #print("Removing temp dir for game {0}".format(patch["game"]))
+                    try:
+                        os.rmdir(d)
+                        print("Directory removed successfully")
+                    except:
+                        pass
+                        #print("Directory could not be removed automatically")
 
 
 if __name__ == "__main__":
