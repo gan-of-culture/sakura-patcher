@@ -166,6 +166,11 @@ ALL_PATCH_URLS = [
                 "URL": "https://we.tl/t-Prc7eoSi4S",
                 "hashes": {"assets.rpa": "35347CD8CEC81E2A424242CAAC00B0DB"}
             },
+            {
+                "game": "Would you like to run an idol café 3", 
+                "URL": "https://wingedcloud.wetransfer.com/downloads/f8f92d4845de4fd98e45caa19244622420220509155624/685a36",
+                "hashes": {"assets.rpa": "E53F18CA02E18C1D30F346A3AE884C5E"}
+            },
 ]
 
 class Patcher(QMainWindow):
