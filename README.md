@@ -65,7 +65,8 @@ Although content you already unlocked will not be deleted, I wanted to make sure
 25. Sakura Succubus 3
 26. Sakura Succubus 4
 27. Sakura Succubus 5
-28. Sakura Swim Club
-29. Would you like to run an idol café?
-30. Would you like to run an idol café? 2
-31. Would you like to run an idol café? 3
+28. Sakura Succubus 6
+29. Sakura Swim Club
+30. Would you like to run an idol café?
+31. Would you like to run an idol café? 2
+32. Would you like to run an idol café? 3

@@ -152,6 +152,11 @@ ALL_PATCH_URLS = [
                 "hashes": {"assets.rpa": "4B9DC63A5E71977DEDD61921273D9A67"}
             },
             {
+                "game": "Sakura Succubus 6",
+                "URL": "https://wingedcloud.wetransfer.com/downloads/523624e1b6a45336e83c5a28a7ad7b0b20220705144353/cb84fb",
+                "hashes": {"assets.rpa": "B511833EFA3C93A4763A353D20491799"}
+            },
+            {
                 "game": "Sakura Swim Club", 
                 "URL": "", # https://we.tl/zWlFopavSh
                 "hashes": {"archive.rpa": "56266B40134B76D60876C5AA9419AF0F"}
