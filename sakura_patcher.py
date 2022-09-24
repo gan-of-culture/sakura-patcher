@@ -24,6 +24,11 @@ ALL_PATCH_URLS = [
                 "hashes": {"assets.rpa": "94446DE3804E3421CB93E7B66A3B4BD0"}
             },
             {
+                "game": "Sakura Alien 2",
+                "URL": "https://we.tl/t-gIwaJT7aEB",
+                "hashes": {"assets.rpa": "38853D179E5DB4D9C4BB458D4651756F"}
+            },
+            {
                 "game": "Sakura Cupid",
                 "URL": "https://wingedcloud.wetransfer.com/downloads/f623887cf50ff53460826f30bae7991920180212164017/d21d1e",
                 "hashes": {"assets.rpa": "1E9F197DC71AE536A92E7C05B689F9E9"}

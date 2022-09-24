@@ -1,4 +1,4 @@
-![FoxGirl](https://static.wikia.nocookie.net/winged-cloud/images/8/86/Images_%284%29.jpeg/revision/latest/scale-to-width-down/906?cb=20200505034653)
+![Wallpaper](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/935070/341aee92e96130ec2d5eec794143a68c2fc5d29d.jpg)
 
 # sakura-patcher
 
@@ -40,33 +40,34 @@ Although content you already unlocked will not be deleted, I wanted to make sure
 
 1. Sakura Agent
 2. Sakura Alien
-3. Sakura Cupid
-4. Sakura Dungeon
-5. Sakura Fantasy
-6. Sakura Forest Girls
-7. Sakura Forest Girls 2
-8. Sakura Forest Girls 3
-9. Sakura Fox Adventure
-10. Sakura Gamer
-11. Sakura Gamer 2
-12. Sakura Knight
-13. Sakura Knight 2
-14. Sakura Knight 3
-15. Sakura Magical Girls
-16. Sakura MMO
-17. Sakura MMO 2
-18. Sakura MMO 3
-19. Sakura MMO Extra
-20. Sakura Nova
-21. Sakura Sadist
-22. Sakura Space
-23. Sakura Succubus
-24. Sakura Succubus 2
-25. Sakura Succubus 3
-26. Sakura Succubus 4
-27. Sakura Succubus 5
-28. Sakura Succubus 6
-29. Sakura Swim Club
-30. Would you like to run an idol café?
-31. Would you like to run an idol café? 2
-32. Would you like to run an idol café? 3
+3. Sakura Alien 2
+4. Sakura Cupid
+5. Sakura Dungeon
+6. Sakura Fantasy
+7. Sakura Forest Girls
+8. Sakura Forest Girls 2
+9. Sakura Forest Girls 3
+10. Sakura Fox Adventure
+11. Sakura Gamer
+12. Sakura Gamer 2
+13. Sakura Knight
+14. Sakura Knight 2
+15. Sakura Knight 3
+16. Sakura Magical Girls
+17. Sakura MMO
+18. Sakura MMO 2
+19. Sakura MMO 3
+20. Sakura MMO Extra
+21. Sakura Nova
+22. Sakura Sadist
+23. Sakura Space
+24. Sakura Succubus
+25. Sakura Succubus 2
+26. Sakura Succubus 3
+27. Sakura Succubus 4
+28. Sakura Succubus 5
+29. Sakura Succubus 6
+30. Sakura Swim Club
+31. Would you like to run an idol café?
+32. Would you like to run an idol café? 2
+33. Would you like to run an idol café? 3
