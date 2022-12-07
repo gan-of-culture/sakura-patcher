@@ -123,9 +123,10 @@ def extract_direct_download_link(session, file_id, recipient_id, security_hash, 
     """
     url = "https://wetransfer.com/api/v4/transfers/{0}/download".format(file_id)
 
-    headers = {"x-csrf-token": csrf_token, "X-Requested-With": "XMLHttpRequest"}
+    ##headers = {"x-csrf-token": csrf_token, "X-Requested-With": "XMLHttpRequest"}
+    headers = {}
 
-    body = {"security_hash": security_hash, "intent": "entire_transfer", "domain_user_id": domain_user_id}
+    body = {"security_hash": security_hash, "intent": "entire_transfer"}
 
     r = session.post(url, json=body, headers=headers)
 

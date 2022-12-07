@@ -1,3 +1,4 @@
 requests
 HTMLParser
 PySide6
+patool

@@ -1,12 +1,11 @@
 from wetransfer import main as wtget
-import requests
 import sys
-import re
 import os
-import time
 from os.path import join
 from zipfile import ZipFile
 from hashlib import md5
+from patoolib import extract_archive
+from shutil import rmtree
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
@@ -45,8 +44,8 @@ ALL_PATCH_URLS = [
             },
             {
                 "game": "Sakura Forest Girls",
-                "URL": "https://wingedcloud.wetransfer.com/downloads/5179f6ba1e1c910fe0efb80403b1b5e320210419152946/d5ba4b",
-                "hashes": {"assets.rpa": "2E838AD5BAB2A8C6F481F5D0D218C129"}
+                "URL": "https://we.tl/t-N7RgVi1FvG",
+                "hashes": {"assets.rpa": "093B2BFB67DD45C4C84D6F97E2D01630"}
             },
             {
                 "game": "Sakura Forest Girls 2",
@@ -77,6 +76,11 @@ ALL_PATCH_URLS = [
                 "hashes": {"assets.rpa": "C02C462A3BA6DF012D9D2F3F71F9F906"}
             },
             {
+                "game": "Sakura Gym Girls Prologue",
+                "URL": "https://we.tl/t-JD2E6Q9L9z",
+                "hashes": {"assets.rpa": "18EA347BFABED9232314E3B619AE0B78"}
+            },
+            {
                 "game": "Sakura Knight",
                 "URL": "https://we.tl/t-RJhUv8UVnr",
                 "hashes": {"assets.rpa": "48512025AAE192240A5E8C9DA3017DC0"}
@@ -95,6 +99,16 @@ ALL_PATCH_URLS = [
                 "game": "Sakura Magical Girls",
                 "URL": "https://we.tl/2mzl9lMihN",
                 "hashes": {"adult.rpa": "DE07120C6A589F3360996F88011FD9AC"}
+            },
+            {
+                "game": "Sakura Melody",
+                "URL": "https://we.tl/t-wNzkLxOLyD",
+                "hashes": {
+                    "AssetBundlesMelody": "EF35A60467AB55DD852FDBBF46B29917",
+                    "AssetBundlesMelody.manifest": "D9841CADD084AFF8DEECEADA2EF673FB",
+                    "modsakuramelody": "49E617F424C0DD752ECB4E9D29F9E3DA",
+                    "modsakuramelody.manifest": "A889AC9850E66DC4CCE7961C7517BFF9"
+                }
             },
             {
                 "game": "Sakura MMO",
@@ -163,8 +177,8 @@ ALL_PATCH_URLS = [
             },
             {
                 "game": "Sakura Swim Club", 
-                "URL": "", # https://we.tl/zWlFopavSh
-                "hashes": {"archive.rpa": "56266B40134B76D60876C5AA9419AF0F"}
+                "URL": "https://we.tl/zWlFopavSh", 
+                "hashes": {"archive.rpa": "C260A1AFA2E3422D84C2A6320A5DF070"}
             },
             {
                 "game": "Would you like to run an idol café", 
@@ -236,6 +250,7 @@ class Patcher(QMainWindow):
         QMetaObject.connectSlotsByName(self)
 
         self.neededPatchFiles = []
+        self.filesBefore = []
     # setupUi
 
     def retranslateUi(self):
@@ -262,6 +277,7 @@ class Patcher(QMainWindow):
             if game.startswith("Sakura") or game.startswith("Would you like to run an idol café"):
                 sakuraGames.append(game)
 
+        self.filesBefore = os.listdir(os.getcwd())
         self.neededPatchFiles = []
         for patch in ALL_PATCH_URLS:
             for game in sakuraGames:
@@ -326,14 +342,17 @@ class Patcher(QMainWindow):
                         with ZipFile(file, 'r') as zipObj:
                             zipObj.extractall()
                         os.remove(file)
+                    elif file.endswith(".rar"):
+                        extract_archive(file, outdir=cwd, interactive=False)
 
 
-                for file in os.listdir(cwd):
-                    if file.endswith(".rpa"):
-                        try:
-                            os.rename(file, join(cwd, patch["game"], file))
-                        except FileExistsError:
-                            pass
+                for root, directory, files in os.walk(cwd):
+                    for file in files:
+                        if any(file in k for k in patch["hashes"].keys()):
+                            try:
+                                os.rename(join(root, file), join(cwd, patch["game"], file))
+                            except FileExistsError:
+                                pass
 
 
             print("Download finished for {0}".format(patch["game"]))
@@ -359,33 +378,32 @@ class Patcher(QMainWindow):
                 else:
                     print("Moving file to dir ERROR!")
 
-            self.progressBar.setValue(100)
-            self.cleanUp()
-            self.updateItems()
+        self.progressBar.setValue(100)
+        self.cleanUp()
+        self.updateItems()
 
     def cleanUp(self):
+        if len(self.filesBefore) < 1:
+            return
+
         for d in os.listdir(os.getcwd()):
-            # The download link for SSC is a .rar file and requiers additional software to unpack
-            # thats why this is the only static binary in this repository
-            cleanUp = True
-            if cleanUp and d != "Sakura Swim Club" and os.path.isdir(d):
-                if d.startswith("Sakura") or d.startswith("Would you like to run an idol café"):
-                    try:
-                        for file in os.listdir(d):
-                            os.remove(join(d,file))
+            if any(d in f for f in self.filesBefore):
+                continue
+            
+            try:
+                os.remove(d)
+                print("File {} removed successfully".format(d))
+            except:
+                pass
+                #print("File(s) could not be removed automatically")
 
-                        print("File(s) removed successfully")
-                    except:
-                        pass
-                        #print("File(s) could not be removed automatically")
-
-                    #print("Removing temp dir for game {0}".format(patch["game"]))
-                    try:
-                        os.rmdir(d)
-                        print("Directory removed successfully")
-                    except:
-                        pass
-                        #print("Directory could not be removed automatically")
+            #print("Removing temp dir for game {0}".format(patch["game"]))
+            try:
+                rmtree(join(os.getcwd(), d), ignore_errors = True)
+                print("Directory {} removed successfully".format(d))
+            except:
+                pass
+                #print("Directory could not be removed automatically")
 
 
 if __name__ == "__main__":
