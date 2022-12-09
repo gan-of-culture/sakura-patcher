@@ -11,7 +11,7 @@ from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
 ## md5sum assets.rpa | tr '[:lower:]' '[:upper:]'
-ALL_PATCH_URLS = [
+ALL_PATCHES = [
             {
                 "game": "Sakura Agent",
                 "URL": "https://wingedcloud.wetransfer.com/downloads/502682c02648ba2bcee9306b45ba237c20170127114431/89dc8a",
@@ -279,7 +279,7 @@ class Patcher(QMainWindow):
 
         self.filesBefore = os.listdir(os.getcwd())
         self.neededPatchFiles = []
-        for patch in ALL_PATCH_URLS:
+        for patch in ALL_PATCHES:
             for game in sakuraGames:
                 if patch["game"] == game:
                     needsPatch = False
@@ -295,10 +295,10 @@ class Patcher(QMainWindow):
                             needsPatch = True
                             continue
                         
-                        md5_h = md5()
+                        md5Hash = md5()
                         with open(hashFile, "rb") as f:
-                            md5_h.update(f.read())
-                        if v != md5_h.hexdigest().upper():
+                            md5Hash.update(f.read())
+                        if v != md5Hash.hexdigest().upper():
                                 needsPatch = True
                     
                     if needsPatch:
