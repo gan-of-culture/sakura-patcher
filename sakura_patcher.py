@@ -76,6 +76,11 @@ ALL_PATCHES = [
                 "hashes": {"assets.rpa": "C02C462A3BA6DF012D9D2F3F71F9F906"}
             },
             {
+                "game": "Sakura Gym Girls",
+                "URL": "https://we.tl/t-3iM3F94CFT",
+                "hashes": {"assets.rpa": "0A61430125924A2216C703A1902A7C1E"}
+            },
+            {
                 "game": "Sakura Gym Girls Prologue",
                 "URL": "https://we.tl/t-JD2E6Q9L9z",
                 "hashes": {"assets.rpa": "18EA347BFABED9232314E3B619AE0B78"}
