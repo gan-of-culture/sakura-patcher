@@ -13,6 +13,16 @@ from PySide6.QtWidgets import *
 ## md5sum assets.rpa | tr '[:lower:]' '[:upper:]'
 ALL_PATCHES = [
             {
+                "game": "Leveling Up Girls in Another World",
+                "URL": "https://wingedcloud.wetransfer.com/downloads/b1eb59fad8accec6c4027ae57423d35a20230428210948/279548",
+                "hashes": {
+                    "AssetBundlesLeveling": "1E1D9BED3B769D44E50E929322BA6970",
+                    "AssetBundlesLeveling.manifest": "629DA33BC0E78D682A49E47073351D2F",
+                    "mod": "0142E1A71FFDCC3713DB70311A0E95FF",
+                    "mod.manifest": "F902B493BA99418EE1686DCAC7D785AF"
+                }
+            },
+            {
                 "game": "Sakura Agent",
                 "URL": "https://wingedcloud.wetransfer.com/downloads/502682c02648ba2bcee9306b45ba237c20170127114431/89dc8a",
                 "hashes": {"archive.rpa": "CEEF65D0B07C1306277663C0CC3FC127"}
