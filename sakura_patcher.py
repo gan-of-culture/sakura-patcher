@@ -38,6 +38,11 @@ ALL_PATCHES = [
                 "hashes": {"assets.rpa": "38853D179E5DB4D9C4BB458D4651756F"}
             },
             {
+                "game": "Sakura Bunny Girls",
+                "URL": "https://we.tl/t-gVOO5RmRlX",
+                "hashes": {"assets.rpa": "936C3720B408F87F2062C2BCBEF4A64B"}
+            },
+            {
                 "game": "Sakura Cupid",
                 "URL": "https://wingedcloud.wetransfer.com/downloads/f623887cf50ff53460826f30bae7991920180212164017/d21d1e",
                 "hashes": {"assets.rpa": "1E9F197DC71AE536A92E7C05B689F9E9"}
