@@ -201,6 +201,11 @@ ALL_PATCHES = [
                 "hashes": {"assets.rpa": "DBAB0DA060D40CB06ECBA711175449CA"}
             },
             {
+                "game": "Sakura Succubus 8",
+                "URL": "https://we.tl/t-HBVLOUeYTb",
+                "hashes": {"assets.rpa": "44E11B371351D5024AC02BE7A128A6F8"}
+            },
+            {
                 "game": "Sakura Swim Club", 
                 "URL": "https://we.tl/zWlFopavSh", 
                 "hashes": {"archive.rpa": "C260A1AFA2E3422D84C2A6320A5DF070"}
