@@ -101,6 +101,11 @@ ALL_PATCHES = [
                 "hashes": {"assets.rpa": "18EA347BFABED9232314E3B619AE0B78"}
             },
             {
+                "game": "Sakura Isekai Adventure",
+                "URL": "https://wingedcloud.wetransfer.com/downloads/bcc16b1417bcc27e381135a170aed6ab20240224185018/364813",
+                "hashes": {"assets.rpa": "3F6A703B3B6DE2B26565D231649608A1"}
+            },            
+            {
                 "game": "Sakura Knight",
                 "URL": "https://we.tl/t-RJhUv8UVnr",
                 "hashes": {"assets.rpa": "48512025AAE192240A5E8C9DA3017DC0"}
