@@ -38,6 +38,11 @@ ALL_PATCHES = [
                 "hashes": {"assets.rpa": "38853D179E5DB4D9C4BB458D4651756F"}
             },
             {
+                "game": "Sakura Alien 3",
+                "URL": "https://wingedcloud.wetransfer.com/downloads/306736bce2e799af847546261ebc088820241007144627/1f6da4?t_exp=1759848387&t_lsid=5b26b149-6d26-4dc0-b654-108e536db6a5&t_rid=YXV0aDB8VHJhbnNmZXJ8b2N4eTdzMDl3M2k=&t_s=download_link&t_ts=1728312387",
+                "hashes": {"assets.rpa": "7F4D8D3328E86121F9522393DC0DE1E6"}
+            },            
+            {
                 "game": "Sakura Bunny Girls",
                 "URL": "https://we.tl/t-gVOO5RmRlX",
                 "hashes": {"assets.rpa": "936C3720B408F87F2062C2BCBEF4A64B"}
