@@ -114,7 +114,12 @@ ALL_PATCHES = [
                 "game": "Sakura Isekai Adventure 2",
                 "URL": "https://wingedcloud.wetransfer.com/downloads/a98fc831d839d4541930aa67662a096720240517185313/b6beb0",
                 "hashes": {"assets.rpa": "1378E37AFB6CFDBB4CE686252C1D0421"}
-            },                        
+            },
+            {
+                "game": "Sakura Isekai Adventure 3",
+                "URL": "https://wingedcloud.wetransfer.com/downloads/fbdf06f6557d1203c329681a4e0b700420241119210735/a5f237",
+                "hashes": {"assets.rpa": "6C0E5CFB1F799CDDB5E81B1000BC77E7"}
+            },                                    
             {
                 "game": "Sakura Knight",
                 "URL": "https://we.tl/t-RJhUv8UVnr",
