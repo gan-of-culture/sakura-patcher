@@ -44,41 +44,42 @@ Although content you already unlocked will not be deleted, I wanted to make sure
 4. Sakura Alien 2
 5. Sakura Alien 3
 6. Sakura Bunny Girls
-7. Sakura Cupid
-8. Sakura Dungeon
-9. Sakura Fantasy
-10. Sakura Forest Girls
-11. Sakura Forest Girls 2
-12. Sakura Forest Girls 3
-13. Sakura Fox Adventure
-14. Sakura Gamer
-15. Sakura Gamer 2
-16. Sakura Gym Girls
-17. Sakura Gym Girls Prologue
-18. Sakura Isekai Adventure
-19. Sakura Isekai Adventure 2
-20. Sakura Knight
-21. Sakura Knight 2
-22. Sakura Knight 3
-23. Sakura Magical Girls
-24. Sakura Melody
-25. Sakura MMO
-26. Sakura MMO 2
-27. Sakura MMO 3
-28. Sakura MMO Extra
-29. Sakura Nova
-30. Sakura Sadist
-31. Sakura Space
-32. Sakura Succubus
-33. Sakura Succubus 2
-34. Sakura Succubus 3
-35. Sakura Succubus 4
-36. Sakura Succubus 5
-37. Sakura Succubus 6
-38. Sakura Succubus 7
-39. Sakura Succubus 8
-40. Sakura Succubus 9
-41. Sakura Swim Club
-42. Would you like to run an idol café?
-43. Would you like to run an idol café? 2
-44. Would you like to run an idol café? 3
+7. Sakura Bunny Girls 2
+8. Sakura Cupid
+9. Sakura Dungeon
+10. Sakura Fantasy
+11. Sakura Forest Girls
+12. Sakura Forest Girls 2
+13. Sakura Forest Girls 3
+14. Sakura Fox Adventure
+15. Sakura Gamer
+16. Sakura Gamer 2
+17. Sakura Gym Girls
+18. Sakura Gym Girls Prologue
+19. Sakura Isekai Adventure
+20. Sakura Isekai Adventure 2
+21. Sakura Knight
+22. Sakura Knight 2
+23. Sakura Knight 3
+24. Sakura Magical Girls
+25. Sakura Melody
+26. Sakura MMO
+27. Sakura MMO 2
+28. Sakura MMO 3
+29. Sakura MMO Extra
+30. Sakura Nova
+31. Sakura Sadist
+32. Sakura Space
+33. Sakura Succubus
+34. Sakura Succubus 2
+35. Sakura Succubus 3
+36. Sakura Succubus 4
+37. Sakura Succubus 5
+38. Sakura Succubus 6
+39. Sakura Succubus 7
+40. Sakura Succubus 8
+41. Sakura Succubus 9
+42. Sakura Swim Club
+43. Would you like to run an idol café?
+44. Would you like to run an idol café? 2
+45. Would you like to run an idol café? 3
