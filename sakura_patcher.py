@@ -146,7 +146,7 @@ ALL_PATCHES = [
                 "hashes": {"adult.rpa": "DE07120C6A589F3360996F88011FD9AC"}
             },
             {
-                "game": "Sakura Melody",
+                "game": "SakuraMelody",
                 "URL": "https://we.tl/t-wNzkLxOLyD",
                 "hashes": {
                     "AssetBundlesMelody": "EF35A60467AB55DD852FDBBF46B29917",
@@ -354,7 +354,7 @@ class Patcher(QMainWindow):
                         if needsPatch:
                             continue
 
-                        hashFile = join(self.pathToGames.text(), game, "game//", k)
+                        hashFile = join(self.pathToGames.text(), game, "game", k)
                         #print(hashFile)
                         if not os.path.isfile(hashFile):
                             needsPatch = True
@@ -364,7 +364,7 @@ class Patcher(QMainWindow):
                         with open(hashFile, "rb") as f:
                             md5Hash.update(f.read())
                         if v != md5Hash.hexdigest().upper():
-                                needsPatch = True
+                            needsPatch = True
                     
                     if needsPatch:
                         self.neededPatchFiles.append(patch)
@@ -392,10 +392,10 @@ class Patcher(QMainWindow):
         if len(self.neededPatchFiles) == 0:
             return
 
-        progressPerIter = int(100 / len(self.neededPatchFiles))
+        progressPerIter = int(100 / len(self.listWidget.selectedItems()))
 
-        for idx, patch in enumerate(self.neededPatchFiles):
-            self.progressBar.setValue(progressPerIter*(idx+1))
+        for idx, listobj in enumerate(self.listWidget.selectedItems()):
+            patch = next((item for item in ALL_PATCHES if item["game"] == listobj.text()), None)
             print("---------{0}.{1}---------".format(idx + 1, patch["game"]))
             print("Downloading patch for {0}".format(patch["game"]))
             
@@ -421,7 +421,10 @@ class Patcher(QMainWindow):
 
 
             print("Download finished for {0}".format(patch["game"]))
-            fileDest = join(self.pathToGames.text(), patch["game"],"game/")
+            fileDest = join(self.pathToGames.text(), patch["game"])
+            if not os.path.exists(fileDest):
+                fileDest = join(self.pathToGames.text(), patch["game"].replace(" ", ""))
+            fileDest = join(fileDest, "game")
             
             for file in os.listdir(join(cwd, patch["game"])):
                 print("Moving file to dir: {0}".format(fileDest))
@@ -442,6 +445,7 @@ class Patcher(QMainWindow):
                     print("Moving file to dir done!")
                 else:
                     print("Moving file to dir ERROR!")
+            self.progressBar.setValue(progressPerIter*(idx+1))
 
         self.progressBar.setValue(100)
         self.cleanUp()
@@ -478,4 +482,4 @@ if __name__ == "__main__":
     patcher = Patcher()
     patcher.show()
 
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
