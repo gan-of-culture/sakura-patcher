@@ -12,7 +12,7 @@ from PySide6.QtWidgets import *
 
 from wetransfer import main as wtget
 
-## md5sum assets.rpa | tr '[:lower:]' '[:upper:]'
+## md5sum assets.rpa | tr '[:lower:]' '[:upper:]' or (Get-FileHash assets.rpa -Algorithm MD5).Hash.ToUpper()
 ALL_PATCHES = [
     {
         "game": "Leveling Up Girls in Another World",

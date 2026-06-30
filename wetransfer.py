@@ -11,53 +11,72 @@
 import getopt
 import json
 import os
-import requests
 import sys
 
-if (sys.version_info > (3, 0)):
-    from urllib.parse import urlparse, parse_qs
+import requests
+
+if sys.version_info > (3, 0):
     from html.parser import HTMLParser
+    from urllib.parse import parse_qs, urlparse
 else:
-    from urlparse import urlparse, parse_qs
     from HTMLParser import HTMLParser
+    from urlparse import parse_qs, urlparse
+
 
 class HTMLMetaTagCSRFTokenParser(HTMLParser):
     def __init__(self):
         # Python 3 requires a call to super().__init__()
-        if (sys.version_info > (3, 0)): super().__init__()
+        if sys.version_info > (3, 0):
+            super().__init__()
         self.reset()
-        self.CSRF_Token = ''
+        self.CSRF_Token = ""
+
     def handle_starttag(self, tag, attrs):
         if "meta" in tag:
             if len(attrs) == 2:
                 (key, value) = attrs[0]
-                if key == 'name' and value == 'csrf-token':
+                if key == "name" and value == "csrf-token":
                     (tokenKey, tokenValue) = attrs[1]
-                    if tokenKey == 'content':
+                    if tokenKey == "content":
                         self.CSRF_Token = tokenValue
+
     def clean(self):
-        self.CSRF_Token = ''
+        self.CSRF_Token = ""
+
 
 class HTMLDataParser(HTMLParser):
     def __init__(self):
         # Python 3 requires a call to super().__init__()
-        if (sys.version_info > (3, 0)): super().__init__()
+        if sys.version_info > (3, 0):
+            super().__init__()
         self.reset()
         self.HTMLData = []
+
     def handle_data(self, data):
         self.HTMLData.append(data)
+
     def clean(self):
         self.HTMLData = []
+
 
 def main(argv):
     try:
         url = argv
         with requests.Session() as session:
+            session.headers.update(
+                {
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+                }
+            )
+
             responseData = perform_get_from_url(url, session)
 
             # If the shortened URL was used, then get the full URL from the response headers
-            if len(responseData.text) == 0 and len(responseData.headers['location']) > 0:
-                url = responseData.headers['location']
+            if (
+                len(responseData.text) == 0
+                and len(responseData.headers["location"]) > 0
+            ):
+                url = responseData.headers["location"]
 
             [file_id, recipient_id, security_hash] = extract_params(url)
 
@@ -67,11 +86,18 @@ def main(argv):
 
             csrf_token = extract_csrf_token(requestData.text)
 
-            download_link = extract_direct_download_link(session, file_id, recipient_id, security_hash, domain_user_id, csrf_token)
-            
+            download_link = extract_direct_download_link(
+                session,
+                file_id,
+                recipient_id,
+                security_hash,
+                domain_user_id,
+                csrf_token,
+            )
+
             if len(download_link) > 0:
                 perform_download(download_link)
-                
+
                 return 0
             else:
                 print("Could not extract the direct download link")
@@ -79,9 +105,15 @@ def main(argv):
 
     except requests.exceptions.HTTPError as e:
         if len(e.args) == 1 and e.args[0].startswith("417"):
-            print("Please check the request.  The data in the response from WeTransfer may have changed. ('417 Client Error : Expectation Failed')")
+            print(
+                "Please check the request.  The data in the response from WeTransfer may have changed. ('417 Client Error : Expectation Failed')"
+            )
         else:
-            print("general HTTPError occurred:\n{0} (args:{1!r})".format(type(e).__name__, e.args))
+            print(
+                "general HTTPError occurred:\n{0} (args:{1!r})".format(
+                    type(e).__name__, e.args
+                )
+            )
 
         sys.exit(1)
 
@@ -91,6 +123,7 @@ def main(argv):
 
     except getopt.GetoptError:
         sys.exit(2)
+
 
 def display_usage():
     print("""
@@ -104,9 +137,10 @@ And download it! :)
 """)
     sys.exit()
 
+
 def extract_csrf_token(htmlData):
     """
-        Uses a HTMLParser to locate and return a required token
+    Uses a HTMLParser to locate and return a required token
     """
     parsedHTML = HTMLMetaTagCSRFTokenParser()
     parsedHTML.feed(htmlData)
@@ -117,29 +151,33 @@ def extract_csrf_token(htmlData):
 
     return token
 
-def extract_direct_download_link(session, file_id, recipient_id, security_hash, domain_user_id, csrf_token):
+
+def extract_direct_download_link(
+    session, file_id, recipient_id, security_hash, domain_user_id, csrf_token
+):
     """
-        Calls the API in order to retrieve the direct link
+    Calls the API in order to retrieve the direct link
     """
     url = "https://wetransfer.com/api/v4/transfers/{0}/download".format(file_id)
 
-    ##headers = {"x-csrf-token": csrf_token, "X-Requested-With": "XMLHttpRequest"}
-    headers = {}
+    headers = {"x-csrf-token": csrf_token, "X-Requested-With": "XMLHttpRequest"}
+    ##headers = {}
 
     body = {"security_hash": security_hash, "intent": "entire_transfer"}
 
     r = session.post(url, json=body, headers=headers)
 
     r.raise_for_status()
-    
+
     jsonData = r.json()
 
-    if 'direct_link' in jsonData:
-        return jsonData['direct_link']
+    if "direct_link" in jsonData:
+        return jsonData["direct_link"]
+
 
 def extract_domain_user_id(htmlData):
     """
-        Extracts the required domain_user_id value from the HTML
+    Extracts the required domain_user_id value from the HTML
     """
     parsedHTML = HTMLDataParser()
     parsedHTML.feed(htmlData)
@@ -150,102 +188,109 @@ def extract_domain_user_id(htmlData):
 
     for index, value in enumerate(data):
         if "__launch_darkly" in value and "feature_flags" in value:
-            firstPos = value.find('{')
-            lastPos = value.rfind('}')
+            firstPos = value.find("{")
+            lastPos = value.rfind("}")
             extracted = value[firstPos:lastPos]
             obj = extracted.split()
 
             for idx, val in enumerate(obj):
-                if 'user:' in val:
-                    keyData = obj[idx+1]
+                if "user:" in val:
+                    keyData = obj[idx + 1]
                     jsonData = json.loads(keyData)
-                    return jsonData['key']
+                    return jsonData["key"]
+
 
 def extract_params(url):
     """
-            Extracts params from url
+    Extracts params from url, stripping any query strings.
     """
-    params = url.split("downloads/")
+    # 1. Strip any query parameters (e.g., ?trk=... or ?utcoffset=...)
+    clean_url = url.split("?")[0]
+
+    params = clean_url.split("downloads/")
+
+    if len(params) < 2:
+        print("Invalid WeTransfer URL format.")
+        return ["", "", ""]
+
+    parts = params[1].split("/")
 
     file_id = ""
     recipient_id = ""
     security_hash = ""
 
-    if len(params) > 0:
-        [file_id, recipient_id, security_hash] = ['', '', '']
-
-        if "http" in params[0]:
-            parts = params[1].split('/')
-            [file_id, security_hash] = parts
-        else:
-            if len(parts) > 2:
-                # The url is similar to
-                # https://www.wetransfer.com/downloads/XXXXXXXXXX/YYYYYYYYY/ZZZZZZZZ
-                [file_id, recipient_id, security_hash] = params
-            else:
-                # The url is similar to https://www.wetransfer.com/downloads/XXXXXXXXXX/ZZZZZZZZ
-                # In this case we have no recipient_id
-                [file_id, security_hash] = parts
+    # 2. Safely unpack depending on whether a recipient ID is present
+    if len(parts) == 3:
+        file_id, recipient_id, security_hash = parts
+    elif len(parts) == 2:
+        file_id, security_hash = parts
     else:
-        print("no params")
+        print("Unknown URL structure.")
 
     return [file_id, recipient_id, security_hash]
 
+
 def perform_download(url, outdir=None):
     """
-        Use the direct link URL to download the file
+    Use the direct link URL to download the file
     """
     if outdir is None:
         outdir = os.getcwd()
 
     direct_link_path = urlparse(url).path
-    path_parts = direct_link_path.split('/')
+    path_parts = direct_link_path.split("/")
     file_name = path_parts[-1]
 
     output_full_path = os.path.join(outdir, file_name)
 
     r = requests.get(url, stream=True)
-    
+
     file_size = int(r.headers["Content-Length"])
-    
-    print("Starting download of {0} to {1} (file size = {2} bytes)".format(file_name, output_full_path, file_size))
-    
-    output_file = open(output_full_path, 'wb')
-    
+
+    print(
+        "Starting download of {0} to {1} (file size = {2} bytes)".format(
+            file_name, output_full_path, file_size
+        )
+    )
+
+    output_file = open(output_full_path, "wb")
+
     counter = 0
     chunksize = 1024
     previousPerCent = 0
 
-    sys.stdout.write(
-       '\n\r0% 0/{0}'.format(file_size)
-    )
+    sys.stdout.write("\n\r0% 0/{0}".format(file_size))
     sys.stdout.flush()
 
     for chunk in r.iter_content(chunk_size=chunksize):
         if chunk:
             output_file.write(chunk)
             output_file.flush()
-            
+
             currentPercent = int((counter * chunksize) * 100 / file_size)
 
             if currentPercent > previousPerCent:
                 previousPerCent = currentPercent
-                
+
                 sys.stdout.write(
-                   '\r{0}% {1}/{2}'.format(currentPercent, counter * chunksize, file_size)
+                    "\r{0}% {1}/{2}".format(
+                        currentPercent, counter * chunksize, file_size
+                    )
                 )
                 sys.stdout.flush()
-            
+
             counter += 1
 
     output_file.close()
 
-    sys.stdout.write('\r100% {0}/{1}\n'.format(file_size, file_size))
+    sys.stdout.write("\r100% {0}/{1}\n".format(file_size, file_size))
 
-    print('\nCompleted downloading to {0}\n'.format(output_full_path))
+    print("\nCompleted downloading to {0}\n".format(output_full_path))
+
 
 def perform_get_from_url(url, session):
     return session.get(url, allow_redirects=False)
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])

@@ -19,7 +19,7 @@ Install the dependencies:
 
 Now you can run the program like this:
 
-    python sakura-patcher.py 
+    python sakura_patcher.py 
 
 Choose your file path. For me the games are in this directory:
 
